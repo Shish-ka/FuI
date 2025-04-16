@@ -1,0 +1,197 @@
+@font-face {
+    font-family: OpenSans;
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+:root {
+    --white: white;
+    --black: black;
+    --font: OpenSans;
+    --headerBC: rgb(175, 230, 255);
+    --modalBC: rgb(255, 236, 175);
+    --messageBC: rgb(255, 218, 175);
+    --a: rgb(76, 0, 252);
+    --accent: rgb(255, 136, 0);
+    --accent2: rgb(255, 0, 76);
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+    color: var(--black);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    column-gap: 20px;
+}
+
+
+
+header {
+    padding: 10px 10%;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    background-color: var(--headerBC);
+    align-items: center;
+    justify-items: end;
+    position: fixed;
+    width: 100%;
+}
+
+header>div a {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+}
+
+header a:hover, footer a:hover {
+    color: var(--a);
+    transition: all 0.7s;
+}
+
+header>div a div:first-child {
+    height: 60px;
+    width: 60px;
+    background-image: url(../images/logo.png);
+    background-size: 230px;
+}
+
+
+
+main {
+    padding: 100px 10%;
+    background-color: var(--white);
+    display: grid;
+    grid-template-rows: max-content;
+    row-gap: 10px;
+    justify-items: center;
+    width: 100%;
+}
+
+#f, #messages {
+    display: grid;
+    row-gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+}
+
+.modal, #messages div {
+    display: grid;
+    background-color: var(--modalBC);
+    padding: 20px;
+    row-gap: 10px;
+    border-radius: 10px;
+}
+
+#messages div {
+    background-color: var(--messageBC);
+}
+
+#messages div button {
+    height: 40px;
+}
+
+.modal article, #messages article {
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--white);
+}
+
+.clickableA {
+    color: var(--a);
+}
+
+.btn {
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: var(--white);
+    color: var(--black);
+    text-align: center;
+}
+
+.btn:hover {
+    transform: scale(1.01);
+    transition: all 0.7s;
+    color: var(--accent);
+}
+
+
+#s  {
+    width: 100%;
+}
+
+.regInput {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 120%;
+    border: 0;
+    background-color: var(--white);
+}
+
+label {
+    cursor: pointer;
+}
+
+form {
+    text-align: end;
+}
+
+form h1 {
+    text-align: start;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--white);
+}
+
+form div {
+    column-gap: 10px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    row-gap: 10px;
+    align-items: center;
+    padding: 10px 10%;
+    border-radius: 8px;
+    justify-self: center;
+}
+
+span {
+    font-weight: 700;
+    color: var(--accent2);
+}
+
+
+
+footer {
+    padding: 10px 10%;
+    display: grid;
+    background-color: var(--headerBC);
+    align-items: center;
+    justify-items: end;
+    width: 100%;
+}
+
+
+
+@media screen and (max-width: 650px){
+    header, footer {
+        padding: 5px 5%;
+    }
+    header ul {
+        display: grid;
+        justify-items: end;
+    }
+
+    main {
+        padding: 90px 5%;
+    } 
+}
