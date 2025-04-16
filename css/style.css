@@ -23,7 +23,6 @@
     box-sizing: border-box;
     font-family: var(--font);
     color: var(--black);
-    word-break: break-all;
 }
 
 a {
@@ -84,6 +83,8 @@ main {
     row-gap: 10px;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 10px;
+    width: 100%;
+    word-break: break-all;
 }
 
 .modal, #messages div {
@@ -192,11 +193,16 @@ footer {
         display: grid;
         justify-items: end;
     }
+    header>div a div:last-child {
+        display: none;
+    }
 
     main {
         padding: 90px 5%;
     }
-    
+    form div {
+        grid-template-columns: min-content 1fr;
+    }
 }
 
 @media screen and (max-width: 1000px){
@@ -207,4 +213,5 @@ footer {
         grid-template-columns: repeat(1, 1fr) !important;
     } 
 }
+
 
