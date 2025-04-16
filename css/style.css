@@ -23,6 +23,7 @@
     box-sizing: border-box;
     font-family: var(--font);
     color: var(--black);
+    word-break: break-all;
 }
 
 a {
@@ -81,13 +82,13 @@ main {
 #f, #messages {
     display: grid;
     row-gap: 10px;
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 10px;
 }
 
 .modal, #messages div {
     display: grid;
+    grid-template-rows: max-content;
     background-color: var(--modalBC);
     padding: 20px;
     row-gap: 10px;
@@ -96,6 +97,7 @@ main {
 
 #messages div {
     background-color: var(--messageBC);
+    align-content: space-between;
 }
 
 #messages div button {
@@ -182,7 +184,7 @@ footer {
 
 
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 600px){
     header, footer {
         padding: 5px 5%;
     }
@@ -193,5 +195,16 @@ footer {
 
     main {
         padding: 90px 5%;
+    }
+    
+}
+
+@media screen and (max-width: 1000px){
+    #messages {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    #f {
+        grid-template-columns: repeat(1, 1fr) !important;
     } 
 }
+
