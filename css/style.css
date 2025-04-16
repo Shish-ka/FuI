@@ -84,7 +84,6 @@ main {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 10px;
     width: 100%;
-    word-break: break-all;
 }
 
 .modal, #messages div {
@@ -99,6 +98,7 @@ main {
 #messages div {
     background-color: var(--messageBC);
     align-content: space-between;
+    word-break: break-all;
 }
 
 #messages div button {
@@ -106,6 +106,8 @@ main {
 }
 
 .modal article, #messages article {
+    display: grid;
+    justify-items: start;
     padding-bottom: 10px;
     border-bottom: 3px solid var(--white);
 }
@@ -150,12 +152,6 @@ form {
     text-align: end;
 }
 
-form h1 {
-    text-align: start;
-    padding-bottom: 10px;
-    border-bottom: 3px solid var(--white);
-}
-
 form div {
     column-gap: 10px;
     display: grid;
@@ -185,7 +181,13 @@ footer {
 
 
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 1000px){
+    #f, #messages {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}
+
+@media screen and (max-width: 800px){
     header, footer {
         padding: 5px 5%;
     }
@@ -198,7 +200,7 @@ footer {
     }
 
     main {
-        padding: 90px 5%;
+        padding: 80px 5%;
     }
     form {
         text-align: start;
@@ -208,13 +210,6 @@ footer {
     }
 }
 
-@media screen and (max-width: 1000px){
-    #messages {
-        grid-template-columns: repeat(1, 1fr) !important;
-    }
-    #f {
-        grid-template-columns: repeat(1, 1fr) !important;
-    } 
-}
+
 
 
