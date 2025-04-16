@@ -161,6 +161,7 @@ form div {
     padding: 10px 10%;
     border-radius: 8px;
     justify-self: center;
+    width: 100%;
 }
 
 span {
@@ -206,6 +207,7 @@ footer {
         text-align: start;
     }
     form div {
+        padding: 10px 0;
         grid-template-columns: repeat(1, 1fr) !important;
     }
 
